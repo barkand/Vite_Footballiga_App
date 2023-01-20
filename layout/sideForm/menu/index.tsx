@@ -5,7 +5,7 @@ import { ButtonList } from "../../../../core/components";
 import { HomeIcon } from "../../../../core/icon";
 
 export default function MenuList(props: any) {
-  const { t } = useTranslation(["public"]);
+  const { t } = useTranslation(["admin"]);
 
   return (
     <ButtonList
