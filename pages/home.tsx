@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { ageData, pieData, stackedBarData, lineData } from "./data";
 
 import { PublicContext } from "../../core/context";
 import {
@@ -9,12 +10,17 @@ import {
   Label,
   Divider,
   Media,
+  PieChart,
+  StackedBarChart,
+  BarChart,
+  LineChart,
 } from "../../core/components";
+import { Background, Colors } from "../../core/theme";
 import { TopPlayers, Groups } from "../../market/components";
 
 export default function HomePage() {
   const { publicCtx } = React.useContext(PublicContext);
-  const { t } = useTranslation(["public"]);
+  const { t } = useTranslation(["public", "market"]);
 
   return (
     <>
@@ -32,27 +38,68 @@ export default function HomePage() {
           alignItems="center"
           justifyContent="space-evenly"
           textAlign="center"
+          columnSpacing={{ md: 2, lg: 3 }}
           sx={{ padding: "40px" }}
         >
-          <GridItem md={6} xs={12} sx={{ display: "contents" }}>
-            <Media
-              image="assets\media\pwa\logo-512.png"
-              alt="Logo Footballiga"
-              sx={{ width: "250px" }}
-            />
-          </GridItem>
-          <GridItem md={6} xs={12}>
-            <Label
-              size={publicCtx.device.isMobile ? "h3" : "h2"}
-              sx={{ pt: 5, pb: 5, fontFamily: "Alegreya,serif" }}
+          <GridItem lg={4} md={6} sm={12}>
+            <GridHeader
+              direction="column"
+              alignItems="center"
+              justifyContent="center"
+              textAlign="-webkit-center"
             >
-              {t("site-name")}
-            </Label>
-            <Label size="p" sx={{ pb: 10 }}>
-              {t("site-description")}
-            </Label>
+              <GridItem xs={12}>
+                <Media
+                  image="assets\media\pwa\logo-512.png"
+                  alt="Logo Footballiga"
+                  sx={{ width: "250px" }}
+                />
+              </GridItem>
+              <GridItem xs={12}>
+                <Label
+                  size={publicCtx.device.isMobile ? "h3" : "h2"}
+                  sx={{ pt: 2, pb: 2, fontFamily: "Alegreya,serif" }}
+                >
+                  {t("site-name")}
+                </Label>
+                <Label size="p" sx={{ pb: 3 }}>
+                  {t("site-description")}
+                </Label>
+              </GridItem>
+            </GridHeader>
           </GridItem>
-          <Divider sx={{ mt: 1, mb: 5 }} />
+
+          <CardDashboard
+            title={t("cnt-sale-cards", { ns: "market" })}
+            lg={4}
+            md={6}
+            sm={12}
+          >
+            <StackedBarChart
+              data={stackedBarData}
+              fill={
+                Colors[publicCtx.theme.color][publicCtx.theme.background.name]
+                  .primary
+              }
+            />
+          </CardDashboard>
+          <CardDashboard title={t("cnt-post-players", { ns: "market" })} lg={4} md={6} sm={12}>
+            <PieChart data={pieData} />
+          </CardDashboard>
+          <CardDashboard title={t("avg-age-players", { ns: "market" })} lg={4} md={6} sm={12}>
+            <BarChart data={ageData} />
+          </CardDashboard>
+          <CardDashboard title={t("avg-age-players", { ns: "market" })} lg={8} md={12} sm={12}>
+            <LineChart
+              data={lineData}
+              color={
+                Colors[publicCtx.theme.color][publicCtx.theme.background.name]
+                  .primary
+              }
+            />
+          </CardDashboard>
+
+          <Divider sx={{ mt: 5, mb: 5 }} />
 
           <GridItem xs={12}>
             <Groups />
@@ -65,5 +112,29 @@ export default function HomePage() {
         </GridHeader>
       </Box>
     </>
+  );
+}
+
+function CardDashboard({ children, title, lg, md, sm }: any) {
+  const { publicCtx } = React.useContext(PublicContext);
+
+  return (
+    <GridItem lg={lg} md={md} sm={sm} sx={{ height: "100%" }}>
+      <>
+        <div
+          style={{
+            height: "350px",
+            margin: "5px",
+            borderRadius: "25px",
+            background: Background[publicCtx.theme.background.name].tertiary,
+          }}
+        >
+          {children}
+        </div>
+        <Label size="p" sx={{ pb: 3 }}>
+          {title}
+        </Label>
+      </>
+    </GridItem>
   );
 }
