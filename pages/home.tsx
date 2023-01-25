@@ -70,16 +70,36 @@ export default function HomePage() {
             </GridHeader>
           </GridItem>
 
-          <GridItem lg={4} md={6} sm={12} sx={{ height: "100%" }}>
+          <GridItem
+            lg={4}
+            md={6}
+            sm={12}
+            sx={{ height: "100%", width: "100%" }}
+          >
             <ChartCntSales />
           </GridItem>
-          <GridItem lg={4} md={6} sm={12} sx={{ height: "100%" }}>
+          <GridItem
+            lg={4}
+            md={6}
+            sm={12}
+            sx={{ height: "100%", width: "100%" }}
+          >
             <ChartCntPostPlayers />
           </GridItem>
-          <GridItem lg={4} md={6} sm={12} sx={{ height: "100%" }}>
+          <GridItem
+            lg={4}
+            md={6}
+            sm={12}
+            sx={{ height: "100%", width: "100%" }}
+          >
             <ChartAvgAges />
           </GridItem>
-          <GridItem lg={8} md={12} sx={{ height: "100%" }}>
+          <GridItem
+            lg={8}
+            md={12}
+            sm={12}
+            sx={{ height: "100%", width: "100%" }}
+          >
             <ChartPriceChange />
           </GridItem>
 
