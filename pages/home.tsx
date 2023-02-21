@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <>
       <Box
-        sx={{
+        style={{
           marginTop: "20px",
           alignItems: "center",
           width: publicCtx.device.isMobile ? "100%" : "80%",
@@ -40,7 +40,7 @@ export default function HomePage() {
           justifyContent="space-evenly"
           textAlign="center"
           columnSpacing={{ md: 2, lg: 3 }}
-          sx={{ padding: "40px" }}
+          style={{ padding: "40px" }}
         >
           <GridItem lg={4} md={6} sm={12}>
             <GridHeader
@@ -53,17 +53,17 @@ export default function HomePage() {
                 <Media
                   image="assets\media\pwa\logo-512.png"
                   alt="Logo Footballiga"
-                  sx={{ width: "250px" }}
+                  style={{ width: "250px" }}
                 />
               </GridItem>
               <GridItem xs={12}>
                 <Label
                   size={publicCtx.device.isMobile ? "h3" : "h2"}
-                  sx={{ pt: 2, pb: 2, fontFamily: "Alegreya,serif" }}
+                  style={{ pt: 2, pb: 2, fontFamily: "Alegreya,serif" }}
                 >
                   {t("site-name")}
                 </Label>
-                <Label size="p" sx={{ pb: 3 }}>
+                <Label size="p" style={{ pb: 3 }}>
                   {t("site-description")}
                 </Label>
               </GridItem>
@@ -74,7 +74,7 @@ export default function HomePage() {
             lg={4}
             md={6}
             sm={12}
-            sx={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%" }}
           >
             <ChartCntSales />
           </GridItem>
@@ -82,7 +82,7 @@ export default function HomePage() {
             lg={4}
             md={6}
             sm={12}
-            sx={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%" }}
           >
             <ChartCntPostPlayers />
           </GridItem>
@@ -90,7 +90,7 @@ export default function HomePage() {
             lg={4}
             md={6}
             sm={12}
-            sx={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%" }}
           >
             <ChartAvgAges />
           </GridItem>
@@ -98,17 +98,17 @@ export default function HomePage() {
             lg={8}
             md={12}
             sm={12}
-            sx={{ height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%" }}
           >
             <ChartPriceChange />
           </GridItem>
 
-          <Divider sx={{ mt: 5, mb: 5 }} />
+          <Divider style={{ mt: 5, mb: 5 }} />
 
           <GridItem xs={12}>
             <Groups />
           </GridItem>
-          <Divider sx={{ mt: 5, mb: 10 }} />
+          <Divider style={{ mt: 5, mb: 10 }} />
 
           <GridItem xs={12}>
             <TopPlayers />
