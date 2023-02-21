@@ -2,7 +2,7 @@ import React from "react";
 
 import { PublicContext } from "../../../core/context";
 import { SideFormTemplate } from "../../../template";
-import { Gap, HelpMenu, HomeMenu } from "../../../core/components";
+import { Gap, HomeMenu } from "../../../core/components";
 import { DarkModeButton } from "../../../core/theme";
 import {
   MiniProfileGadget,
@@ -28,7 +28,6 @@ export default function Menu() {
         <HomeMenu onClose={closeDrawer} />
         <AdminMenu onClose={closeDrawer} />
         <MarketMenu onClose={closeDrawer} />
-        <HelpMenu onClose={closeDrawer} />
       </div>
 
       <Gap />
