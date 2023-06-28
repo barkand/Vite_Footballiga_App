@@ -1,4 +1,4 @@
-import { FooterTemplate } from "../../../template";
+import { FooterTemplate } from "@/template";
 
 export default function Footer() {
   return (

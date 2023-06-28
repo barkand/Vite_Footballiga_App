@@ -1,4 +1,4 @@
-import { LayoutTemplate } from "../../template";
+import { LayoutTemplate } from "@/template";
 
 import Header from "./header";
 import Main from "./main";

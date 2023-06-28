@@ -1,15 +1,15 @@
 import React from "react";
 
-import { PublicContext } from "../../../core/context";
-import { SideFormTemplate } from "../../../template";
-import { Gap, HomeMenu } from "../../../core/components";
-import { DarkModeButton } from "../../../core/theme";
+import { PublicContext } from "@/core/context";
+import { SideFormTemplate } from "@/template";
+import { Gap, HomeMenu } from "@/core/components";
+import { DarkModeButton } from "@/core/theme";
 import {
   MiniProfileGadget,
   AdminMenu,
   SettingButton,
-} from "../../../admin/components";
-import { MarketMenu } from "../../../market/components";
+} from "@/admin/components";
+import { MarketMenu } from "@/market/components";
 
 export default function Menu() {
   const { publicCtx }: { publicCtx: any } = React.useContext(PublicContext);

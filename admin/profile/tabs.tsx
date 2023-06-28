@@ -1,15 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import {
-  FavoriteIcon,
-  CardsIcon,
-  TeamIcon,
-} from "../../../core/icon";
+import { FavoriteIcon, CardsIcon, TeamIcon } from "@/core/icon";
 
-import { TabsHeader, TabLabel, TabPanel } from "../../../core/components";
-import { Favorites, Buys } from "../../../market/components";
-import { Games } from "../../../game/components";
+import { TabsHeader, TabLabel, TabPanel } from "@/core/components";
+import { Favorites, Buys } from "@/market/components";
+import { Games } from "@/game/components";
 
 export default function Tabs() {
   const { t } = useTranslation(["market", "game"]);

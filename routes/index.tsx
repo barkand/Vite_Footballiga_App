@@ -1,13 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
-import { RoutesTypeEnum } from "../../core/constant";
-import NotFoundPage from "../../template/pages/errors/404";
+import { RoutesTypeEnum } from "@/core/constant";
+import NotFoundPage from "@/template/pages/errors/404";
 
 import HomePage from "../pages/home";
 import ProfilePage from "../pages/admin";
 
-import ProductListPage from "../../market/pages/product";
-import ProductItemPage from "../../market/pages/product/item";
+import ProductListPage from "@/market/pages/product";
+import ProductItemPage from "@/market/pages/product/item";
 
 export default function RoutesComponent() {
   return (

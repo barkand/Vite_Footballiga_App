@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { PublicContext } from "../../core/context";
+import { PublicContext } from "@/core/context";
 import {
   Box,
   GridHeader,
@@ -9,7 +9,7 @@ import {
   Label,
   Divider,
   Media,
-} from "../../core/components";
+} from "@/core/components";
 import {
   TopPlayers,
   Groups,
@@ -17,7 +17,7 @@ import {
   ChartAvgAges,
   ChartCntSales,
   ChartPriceChange,
-} from "../../market/components";
+} from "@/market/components";
 
 export default function HomePage() {
   const { publicCtx } = React.useContext(PublicContext);

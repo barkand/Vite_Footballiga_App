@@ -1,4 +1,4 @@
-import { ProfileComponent } from "../../../admin/components";
+import { ProfileComponent } from "@/admin/components";
 
 import { default as ProfileTabs } from "../../admin/profile/tabs";
 
